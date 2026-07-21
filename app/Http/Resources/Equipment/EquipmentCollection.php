@@ -14,27 +14,8 @@ class EquipmentCollection extends ResourceCollection
     {
         return [
             'success' => true,
-
             'message' => 'Equipment retrieved successfully.',
-
             'data' => EquipmentResource::collection($this->collection),
-        ];
-    }
-
-    /**
-     * Add pagination metadata.
-     */
-    public function with(Request $request): array
-    {
-        return [
-            'meta' => [
-                'current_page' => $this->currentPage(),
-                'last_page' => $this->lastPage(),
-                'per_page' => $this->perPage(),
-                'total' => $this->total(),
-                'from' => $this->firstItem(),
-                'to' => $this->lastItem(),
-            ],
         ];
     }
 }
