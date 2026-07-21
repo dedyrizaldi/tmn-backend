@@ -17,32 +17,7 @@ class NewsCollection extends ResourceCollection
 
             'message' => 'News retrieved successfully.',
 
-            'data' => $this->collection->map(function ($news) {
-                return [
-                    'id' => $news->id,
-
-                    'title' => $news->title,
-
-                    'slug' => $news->slug,
-
-                    'author' => $news->author,
-
-                    'excerpt' => $news->excerpt,
-
-                    'thumbnail' => $news->getFirstMediaUrl('thumbnail'),
-
-                    'category' => [
-                        'id' => $news->category?->id,
-                        'name' => $news->category?->name,
-                        'slug' => $news->category?->slug,
-                    ],
-
-                    'featured' => (bool) $news->featured,
-
-                    'published_at' => optional($news->published_at)
-                        ?->toIso8601String(),
-                ];
-            })->values(),
+            'data' => NewsResource::collection($this->collection),
         ];
     }
 

@@ -1,64 +1,67 @@
 <?php
 
-namespace App\Http\Resources\News;
+namespace App\Filament\Resources\News;
 
-use Illuminate\Http\Request;
-use Illuminate\Http\Resources\Json\JsonResource;
+use App\Filament\Resources\News\Pages\CreateNews;
+use App\Filament\Resources\News\Pages\EditNews;
+use App\Filament\Resources\News\Pages\ListNews;
+use App\Filament\Resources\News\Schemas\NewsForm;
+use App\Filament\Resources\News\Tables\NewsTable;
+use App\Models\News;
+use BackedEnum;
+use Filament\Resources\Resource;
+use Filament\Schemas\Schema;
+use Filament\Support\Icons\Heroicon;
+use Filament\Tables\Table;
+use UnitEnum;
 
-class NewsResource extends JsonResource
+class NewsResource extends Resource
 {
-    /**
-     * Transform the resource into an array.
-     *
-     * @return array<string, mixed>
-     */
-    public function toArray(Request $request): array
+    protected static ?string $model = News::class;
+
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedNewspaper;
+
+    protected static ?int $navigationSort = 2;
+
+    protected static ?string $recordTitleAttribute = 'title';
+
+    protected static ?string $modelLabel = 'News';
+
+    protected static ?string $pluralModelLabel = 'News';
+
+    public static function getNavigationLabel(): string
+    {
+        return 'News';
+    }
+
+    public static function getNavigationGroup(): string|UnitEnum|null
+    {
+        return 'News';
+    }
+
+    public static function form(Schema $schema): Schema
+    {
+        return NewsForm::configure($schema);
+    }
+
+    public static function table(Table $table): Table
+    {
+        return NewsTable::configure($table);
+    }
+
+    public static function getRelations(): array
     {
         return [
-            'id' => $this->id,
+            //
+        ];
+    }
 
-            'title' => $this->title,
-
-            'slug' => $this->slug,
-
-            'author' => $this->author,
-
-            'excerpt' => $this->excerpt,
-
-            'content' => $this->content,
-
-            'thumbnail' => $this->getFirstMediaUrl('thumbnail'),
-
-            'gallery' => $this->getMedia('gallery')
-                ->map(fn ($media) => [
-                    'id' => $media->id,
-                    'name' => $media->name,
-                    'url' => $media->getUrl(),
-                ])
-                ->values(),
-
-            'category' => [
-                'id' => $this->category?->id,
-                'name' => $this->category?->name,
-                'slug' => $this->category?->slug,
-            ],
-
-            'featured' => (bool) $this->featured,
-
-            'status' => $this->status,
-
-            'meta_title' => $this->meta_title,
-
-            'meta_description' => $this->meta_description,
-
-            'published_at' => optional($this->published_at)
-                ?->toIso8601String(),
-
-            'created_at' => optional($this->created_at)
-                ?->toIso8601String(),
-
-            'updated_at' => optional($this->updated_at)
-                ?->toIso8601String(),
+    public static function getPages(): array
+    {
+        return [
+            'index' => ListNews::route('/'),
+            'create' => CreateNews::route('/create'),
+            'edit' => EditNews::route('/{record}/edit'),
         ];
     }
 }

@@ -17,30 +17,7 @@ class EquipmentCollection extends ResourceCollection
 
             'message' => 'Equipment retrieved successfully.',
 
-            'data' => $this->collection->map(function ($equipment) {
-                return [
-                    'id' => $equipment->id,
-
-                    'title' => $equipment->title,
-
-                    'slug' => $equipment->slug,
-
-                    'excerpt' => $equipment->excerpt,
-
-                    'thumbnail' => $equipment->getFirstMediaUrl('thumbnail'),
-
-                    'category' => [
-                        'id' => $equipment->category?->id,
-                        'name' => $equipment->category?->name,
-                        'slug' => $equipment->category?->slug,
-                    ],
-
-                    'featured' => (bool) $equipment->featured,
-
-                    'published_at' => optional($equipment->published_at)
-                        ?->toIso8601String(),
-                ];
-            })->values(),
+            'data' => EquipmentResource::collection($this->collection),
         ];
     }
 

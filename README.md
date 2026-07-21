@@ -648,3 +648,320 @@ tmn-backend
 └─ vite.config.js
 
 ```
+```
+tmn-backend
+├─ .editorconfig
+├─ app
+│  ├─ Filament
+│  │  └─ Resources
+│  │     ├─ Equipment
+│  │     │  ├─ EquipmentResource.php
+│  │     │  ├─ Pages
+│  │     │  │  ├─ CreateEquipment.php
+│  │     │  │  ├─ EditEquipment.php
+│  │     │  │  └─ ListEquipment.php
+│  │     │  ├─ Schemas
+│  │     │  │  └─ EquipmentForm.php
+│  │     │  └─ Tables
+│  │     │     └─ EquipmentTable.php
+│  │     ├─ EquipmentCategories
+│  │     │  ├─ EquipmentCategoryResource.php
+│  │     │  ├─ Pages
+│  │     │  │  ├─ CreateEquipmentCategory.php
+│  │     │  │  ├─ EditEquipmentCategory.php
+│  │     │  │  └─ ListEquipmentCategories.php
+│  │     │  ├─ Schemas
+│  │     │  │  └─ EquipmentCategoryForm.php
+│  │     │  └─ Tables
+│  │     │     └─ EquipmentCategoriesTable.php
+│  │     ├─ News
+│  │     │  ├─ NewsResource.php
+│  │     │  ├─ Pages
+│  │     │  │  ├─ CreateNews.php
+│  │     │  │  ├─ EditNews.php
+│  │     │  │  └─ ListNews.php
+│  │     │  ├─ Schemas
+│  │     │  │  └─ NewsForm.php
+│  │     │  └─ Tables
+│  │     │     └─ NewsTable.php
+│  │     ├─ NewsCategories
+│  │     │  ├─ NewsCategoryResource.php
+│  │     │  ├─ Pages
+│  │     │  │  ├─ CreateNewsCategory.php
+│  │     │  │  ├─ EditNewsCategory.php
+│  │     │  │  └─ ListNewsCategories.php
+│  │     │  ├─ Schemas
+│  │     │  │  └─ NewsCategoryForm.php
+│  │     │  └─ Tables
+│  │     │     └─ NewsCategoriesTable.php
+│  │     ├─ ProjectCategories
+│  │     │  ├─ Pages
+│  │     │  │  ├─ CreateProjectCategory.php
+│  │     │  │  ├─ EditProjectCategory.php
+│  │     │  │  └─ ListProjectCategories.php
+│  │     │  ├─ ProjectCategoryResource.php
+│  │     │  ├─ Schemas
+│  │     │  │  └─ ProjectCategoryForm.php
+│  │     │  └─ Tables
+│  │     │     └─ ProjectCategoriesTable.php
+│  │     └─ Projects
+│  │        ├─ Pages
+│  │        │  ├─ CreateProject.php
+│  │        │  ├─ EditProject.php
+│  │        │  └─ ListProjects.php
+│  │        ├─ ProjectResource.php
+│  │        ├─ Schemas
+│  │        │  └─ ProjectForm.php
+│  │        └─ Tables
+│  │           └─ ProjectsTable.php
+│  ├─ Http
+│  │  ├─ Controllers
+│  │  │  ├─ Api
+│  │  │  │  └─ V1
+│  │  │  │     ├─ EquipmentController.php
+│  │  │  │     ├─ HomeController.php
+│  │  │  │     ├─ NewsController.php
+│  │  │  │     └─ ProjectController.php
+│  │  │  └─ Controller.php
+│  │  └─ Resources
+│  │     ├─ Equipment
+│  │     │  ├─ EquipmentCollection.php
+│  │     │  └─ EquipmentResource.php
+│  │     ├─ News
+│  │     │  └─ NewsCollection.php
+│  │     └─ Project
+│  │        ├─ ProjectCollection.php
+│  │        └─ ProjectResource.php
+│  ├─ Models
+│  │  ├─ Equipment.php
+│  │  ├─ EquipmentCategory.php
+│  │  ├─ News.php
+│  │  ├─ NewsCategory.php
+│  │  ├─ Project.php
+│  │  ├─ ProjectCategory.php
+│  │  └─ User.php
+│  ├─ Policies
+│  │  └─ RolePolicy.php
+│  ├─ Providers
+│  │  ├─ AppServiceProvider.php
+│  │  └─ Filament
+│  │     └─ AdminPanelProvider.php
+│  └─ Traits
+│     └─ ApiResponse.php
+├─ artisan
+├─ bootstrap
+│  ├─ app.php
+│  ├─ cache
+│  │  ├─ packages.php
+│  │  └─ services.php
+│  └─ providers.php
+├─ composer.json
+├─ composer.lock
+├─ config
+│  ├─ app.php
+│  ├─ auth.php
+│  ├─ cache.php
+│  ├─ database.php
+│  ├─ filesystems.php
+│  ├─ logging.php
+│  ├─ mail.php
+│  ├─ queue.php
+│  ├─ services.php
+│  └─ session.php
+├─ database
+│  ├─ database.sqlite
+│  ├─ factories
+│  │  └─ UserFactory.php
+│  ├─ migrations
+│  │  ├─ 0001_01_01_000000_create_users_table.php
+│  │  ├─ 0001_01_01_000001_create_cache_table.php
+│  │  ├─ 0001_01_01_000002_create_jobs_table.php
+│  │  ├─ 2026_07_19_071900_create_equipment_categories_table.php
+│  │  ├─ 2026_07_19_071938_create_equipment_table.php
+│  │  ├─ 2026_07_19_072232_create_media_table.php
+│  │  ├─ 2026_07_19_085642_create_project_categories_table.php
+│  │  ├─ 2026_07_19_090730_create_projects_table.php
+│  │  ├─ 2026_07_21_074633_create_news_categories_table.php
+│  │  └─ 2026_07_21_075300_create_news_table.php
+│  └─ seeders
+│     ├─ AdminUserSeeder.php
+│     └─ DatabaseSeeder.php
+├─ package-lock.json
+├─ package.json
+├─ phpunit.xml
+├─ public
+│  ├─ .htaccess
+│  ├─ build
+│  │  ├─ assets
+│  │  │  ├─ app-CIjPDMey.css
+│  │  │  └─ app-CIomGrQN.js
+│  │  └─ manifest.json
+│  ├─ css
+│  │  └─ filament
+│  │     └─ filament
+│  │        └─ app.css
+│  ├─ favicon.ico
+│  ├─ fonts
+│  │  └─ filament
+│  │     └─ filament
+│  │        └─ inter
+│  │           ├─ index.css
+│  │           ├─ inter-cyrillic-ext-wght-normal-IYF56FF6.woff2
+│  │           ├─ inter-cyrillic-wght-normal-JEOLYBOO.woff2
+│  │           ├─ inter-greek-ext-wght-normal-EOVOK2B5.woff2
+│  │           ├─ inter-greek-wght-normal-IRE366VL.woff2
+│  │           ├─ inter-latin-ext-wght-normal-HA22NDSG.woff2
+│  │           ├─ inter-latin-wght-normal-NRMW37G5.woff2
+│  │           └─ inter-vietnamese-wght-normal-CE5GGD3W.woff2
+│  ├─ index.php
+│  ├─ js
+│  │  └─ filament
+│  │     ├─ actions
+│  │     │  └─ actions.js
+│  │     ├─ filament
+│  │     │  ├─ app.js
+│  │     │  └─ echo.js
+│  │     ├─ forms
+│  │     │  └─ components
+│  │     │     ├─ checkbox-list.js
+│  │     │     ├─ code-editor.js
+│  │     │     ├─ color-picker.js
+│  │     │     ├─ date-time-picker.js
+│  │     │     ├─ file-upload.js
+│  │     │     ├─ key-value.js
+│  │     │     ├─ markdown-editor.js
+│  │     │     ├─ rich-editor.js
+│  │     │     ├─ select.js
+│  │     │     ├─ slider.js
+│  │     │     ├─ tags-input.js
+│  │     │     └─ textarea.js
+│  │     ├─ notifications
+│  │     │  └─ notifications.js
+│  │     ├─ schemas
+│  │     │  ├─ components
+│  │     │  │  ├─ actions.js
+│  │     │  │  ├─ tabs.js
+│  │     │  │  └─ wizard.js
+│  │     │  └─ schemas.js
+│  │     ├─ support
+│  │     │  └─ support.js
+│  │     ├─ tables
+│  │     │  ├─ components
+│  │     │  │  └─ columns
+│  │     │  │     ├─ checkbox.js
+│  │     │  │     ├─ select.js
+│  │     │  │     ├─ text-input.js
+│  │     │  │     └─ toggle.js
+│  │     │  └─ tables.js
+│  │     └─ widgets
+│  │        └─ components
+│  │           ├─ chart.js
+│  │           └─ stats-overview
+│  │              └─ stat
+│  │                 └─ chart.js
+│  └─ robots.txt
+├─ README.md
+├─ resources
+│  ├─ css
+│  │  └─ app.css
+│  ├─ js
+│  │  ├─ app.js
+│  │  └─ bootstrap.js
+│  └─ views
+│     └─ welcome.blade.php
+├─ routes
+│  ├─ api.php
+│  ├─ console.php
+│  └─ web.php
+├─ storage
+│  ├─ app
+│  │  ├─ private
+│  │  │  ├─ 10
+│  │  │  │  └─ 01KXWTDANVN19NWC1CYTVT0KZB.png
+│  │  │  ├─ 11
+│  │  │  │  └─ 01KY1V1NAGAW7X3Y3V3KR27C2Q.png
+│  │  │  ├─ 12
+│  │  │  │  └─ 01KY1V1NRQZH7AMNWBYDGJ4YYR.png
+│  │  │  ├─ 13
+│  │  │  │  └─ 01KY1V1NSAWK0Z29BKE4AQ2A65.png
+│  │  │  ├─ 5
+│  │  │  │  └─ 01KXWS7GJQW6DJ7566N2TG1MQE.png
+│  │  │  ├─ 6
+│  │  │  │  └─ 01KXWS7GM9V7TBQ26A1NPBPJJ9.png
+│  │  │  ├─ 7
+│  │  │  │  └─ 01KXWTDAH1ABK97X4PCJXVQEHX.png
+│  │  │  ├─ 8
+│  │  │  │  └─ 01KXWTDAJPA2796BK840K1A7JD.png
+│  │  │  ├─ 9
+│  │  │  │  └─ 01KXWTDAM7D3JFMY2P1JJQXSF6.png
+│  │  │  └─ livewire-tmp
+│  │  │     ├─ 3rMXwdjMDmmvoOQt2PejDZJgccifAWCYEt0RP3mD.png
+│  │  │     ├─ 3rMXwdjMDmmvoOQt2PejDZJgccifAWCYEt0RP3mD.png.json
+│  │  │     ├─ CVU4zPaCNcoq7Kh4kKCB19kqR5HUqvKbNDZUtDOY.png
+│  │  │     ├─ CVU4zPaCNcoq7Kh4kKCB19kqR5HUqvKbNDZUtDOY.png.json
+│  │  │     ├─ j4iHQDFMpw6BfnSU58KJfk2qjB5cMngQHuqUSAtt.png.json
+│  │  │     ├─ oMTI3asCpxA18JZfQbE8Twl4N3uO0JX4xNA3AuMp.png
+│  │  │     ├─ oMTI3asCpxA18JZfQbE8Twl4N3uO0JX4xNA3AuMp.png.json
+│  │  │     ├─ QAoFo9qSwi0hLFlbXhxPcfOtdBaAhi4a7qOLIiSR.png.json
+│  │  │     ├─ yBI2YLFo1mHsyD1MtgdLQZn9MxEhP83SyYb40FUK.png
+│  │  │     ├─ yBI2YLFo1mHsyD1MtgdLQZn9MxEhP83SyYb40FUK.png.json
+│  │  │     └─ YIj4oPR2eo1Pgk2OypietbiQUUMCClL0n9uQhlJ3.png.json
+│  │  └─ public
+│  ├─ framework
+│  │  ├─ cache
+│  │  │  └─ data
+│  │  ├─ sessions
+│  │  ├─ testing
+│  │  └─ views
+│  │     ├─ 029457bc008af1652e5292c50172bd1c.php
+│  │     ├─ 0706801cb770959108edbd9c820b845c.php
+│  │     ├─ 073cd2970d50c26ae31ccb2caa570201.php
+│  │     ├─ 0ac3c30bc06942f822f081ee5b187aea.php
+│  │     ├─ 15cb8925745290dca27ffd633424c33e.php
+│  │     ├─ 1e80539572c52bbc7efe27c2c3f6d4eb.php
+│  │     ├─ 393aab034938f25972d6ca41ca686bdf.php
+│  │     ├─ 42fdec4a8cfdcf356fffa5c71420115b.php
+│  │     ├─ 4719821b0203196ac484c17fcf2ff8fa.php
+│  │     ├─ 4943bc92ebba41e8b0e508149542e0ad.blade.php
+│  │     ├─ 4a64a7c001fe4075fb685f7fa96c3061.php
+│  │     ├─ 4fe5ad2a613812b642fefb5f24b6daac.php
+│  │     ├─ 546af1db5ece97fdb574425c43f41884.php
+│  │     ├─ 5492c1d58185d859a66ce3ec743c9a77.php
+│  │     ├─ 5516b872a561308b5344f2e820772eb5.php
+│  │     ├─ 557b633442ded478cc9594e0c564e39e.php
+│  │     ├─ 5f62812c42d99648a1b00be5ccb7a30a.php
+│  │     ├─ 6c27cf82d8b3988d54c04cf0d2b0c888.php
+│  │     ├─ 748f028e98a51d75d548913264b4bda9.php
+│  │     ├─ 7511bdcf8d107f3d2972e21baad8924f.php
+│  │     ├─ 7ef83678c289b21674b3bb586780f42d.php
+│  │     ├─ 89f291def1a0ebc0b37c9a2b7c741343.php
+│  │     ├─ 8adb1b0a0a5f8c507cf1ed6300db9c95.php
+│  │     ├─ 939c5e947080cd5bdef38001f6da3f87.php
+│  │     ├─ 9b48bed5333fbaeaa3cc4221ad52a302.php
+│  │     ├─ a757386f211c08a15109f9ede817d415.php
+│  │     ├─ a984c7e5da443b72adf609eee0f0d5d3.php
+│  │     ├─ b42b23c5a37d27063ab518605fbf2323.php
+│  │     ├─ b6a07a14112a2a507bf79fdee2d76171.php
+│  │     ├─ b745ad0f4b1c7d88e46f034200696e69.php
+│  │     ├─ b7d381c2fc9abb0bf522d1e91f95337b.php
+│  │     ├─ b9768a27ffc91b11002f9212ed7c1179.php
+│  │     ├─ c60591a8468c358f5f1272cfa989467b.php
+│  │     ├─ c7cc75349041d85240b052ce86b5fb66.php
+│  │     ├─ d2096b1044c4f0c0de951ead2669119b.php
+│  │     ├─ d2dbd28092bb9073433d4e90e46b717d.php
+│  │     ├─ e17c9fdc78083748ade6c91cb96ef2ac.php
+│  │     ├─ e66225e46145a6805b8f52f24d527783.php
+│  │     ├─ e75ed2d41c2ace23da814883f7233c2c.php
+│  │     ├─ ea67d7d2be842ce29718193bf402f442.php
+│  │     ├─ fc71c62536c0e17b0e50d23e762c7c66.php
+│  │     └─ feaa07115653e674b8b2394d4fe1bc56.php
+│  └─ logs
+├─ tests
+│  ├─ Feature
+│  │  └─ ExampleTest.php
+│  ├─ TestCase.php
+│  └─ Unit
+│     └─ ExampleTest.php
+└─ vite.config.js
+
+```
