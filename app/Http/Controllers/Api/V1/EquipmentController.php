@@ -33,7 +33,7 @@ class EquipmentController extends Controller
             $search = $request->string('search');
 
             $query->where(function ($q) use ($search) {
-                $q->where('title', 'like', "%{$search}%")
+                $q->where('name', 'like', "%{$search}%")
                     ->orWhere('excerpt', 'like', "%{$search}%")
                     ->orWhere('description', 'like', "%{$search}%");
             });
