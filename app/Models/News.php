@@ -59,4 +59,25 @@ class News extends Model implements HasMedia
         $this
             ->addMediaCollection('gallery');
     }
+
+    /**
+     * Scope a query to only published news.
+     */
+    public function scopePublished($query)
+    {
+        return $query
+            ->where('status', 'published')
+            ->where(function ($query) {
+                $query->whereNull('published_at')
+                    ->orWhere('published_at', '<=', now());
+            });
+    }
+
+    /**
+     * Scope a query to featured news.
+     */
+    public function scopeFeatured($query)
+    {
+        return $query->where('featured', true);
+    }
 }

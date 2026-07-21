@@ -89,4 +89,25 @@ class Equipment extends Model implements HasMedia
             ->map(fn (Media $media) => $media->getUrl())
             ->toArray();
     }
+
+    /**
+     * Scope a query to only published equipment.
+     */
+    public function scopePublished($query)
+    {
+        return $query
+            ->where('status', 'published')
+            ->where(function ($query) {
+                $query->whereNull('published_at')
+                    ->orWhere('published_at', '<=', now());
+            });
+    }
+
+    /**
+     * Scope a query to featured equipment.
+     */
+    public function scopeFeatured($query)
+    {
+        return $query->where('featured', true);
+    }
 }

@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Resources\News;
+namespace App\Http\Resources\Equipment;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class NewsResource extends JsonResource
+class EquipmentResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -21,11 +21,9 @@ class NewsResource extends JsonResource
 
             'slug' => $this->slug,
 
-            'author' => $this->author,
-
             'excerpt' => $this->excerpt,
 
-            'content' => $this->content,
+            'description' => $this->description,
 
             'thumbnail' => $this->getFirstMediaUrl('thumbnail'),
 
