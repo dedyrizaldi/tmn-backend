@@ -16,18 +16,16 @@ class ProjectController extends Controller
     public function index(Request $request)
     {
         
-        $query = Project::query()
-            ->with([
-                'category',
-                'media',
-            ])
-            ->where('status', 'published')
-            ->where(function ($query) {
-                $query->whereNull('published_at')
-                    ->orWhere('published_at', '<=', now());
-            });
-
-                dd($query->paginate(10));
+          $query = Project::query()
+        ->with([
+            'category',
+            'media',
+        ])
+        ->where('status', 'published')
+        ->where(function ($query) {
+            $query->whereNull('published_at')
+                ->orWhere('published_at', '<=', now());
+        });
 
         /**
          * Search
