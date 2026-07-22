@@ -71,7 +71,7 @@ class EquipmentController extends Controller
         /**
          * Pagination
          */
-        $perPage = $request->integer('per_page', 9);
+        $perPage = $request->integer('per_page', 10);
 
         return new EquipmentCollection(
             $query->paginate($perPage)
