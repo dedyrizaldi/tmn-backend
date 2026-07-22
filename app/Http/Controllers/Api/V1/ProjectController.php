@@ -10,75 +10,88 @@ use Illuminate\Http\Request;
 
 class ProjectController extends Controller
 {
+
+public function index(Request $request)
+{
+    $query = Project::query()
+        ->with(['category', 'media']);
+
+    dd([
+        'total' => $query->count(),
+        'first' => $query->first(),
+    ]);
+}
     /**
      * Display a listing of published projects.
      */
-    public function index(Request $request)
-    {
-        $query = Project::query()
-            ->with([
-                'category',
-                'media',
-            ])
-            ->where('status', 'published')
-            ->where(function ($query) {
-                $query->whereNull('published_at')
-                    ->orWhere('published_at', '<=', now());
-            });
+    // public function index(Request $request)
+    // {
 
-        /**
-         * Search
-         */
-        if ($request->filled('search')) {
-            $search = $request->string('search');
+    
+    //     $query = Project::query()
+    //         ->with([
+    //             'category',
+    //             'media',
+    //         ])
+    //         ->where('status', 'published')
+    //         ->where(function ($query) {
+    //             $query->whereNull('published_at')
+    //                 ->orWhere('published_at', '<=', now());
+    //         });
 
-            $query->where(function ($q) use ($search) {
-                $q->where('title', 'like', "%{$search}%")
-                    ->orWhere('excerpt', 'like', "%{$search}%")
-                    ->orWhere('client', 'like', "%{$search}%")
-                    ->orWhere('location', 'like', "%{$search}%");
-            });
-        }
+    //     /**
+    //      * Search
+    //      */
+    //     if ($request->filled('search')) {
+    //         $search = $request->string('search');
 
-        /**
-         * Category Filter
-         */
-        if ($request->filled('category')) {
-            $category = $request->string('category');
+    //         $query->where(function ($q) use ($search) {
+    //             $q->where('title', 'like', "%{$search}%")
+    //                 ->orWhere('excerpt', 'like', "%{$search}%")
+    //                 ->orWhere('client', 'like', "%{$search}%")
+    //                 ->orWhere('location', 'like', "%{$search}%");
+    //         });
+    //     }
 
-            $query->whereHas('category', function ($q) use ($category) {
-                $q->where('slug', $category);
-            });
-        }
+    //     /**
+    //      * Category Filter
+    //      */
+    //     if ($request->filled('category')) {
+    //         $category = $request->string('category');
 
-        /**
-         * Featured Filter
-         */
-        if ($request->filled('featured')) {
-            $query->where(
-                'featured',
-                filter_var($request->featured, FILTER_VALIDATE_BOOLEAN)
-            );
-        }
+    //         $query->whereHas('category', function ($q) use ($category) {
+    //             $q->where('slug', $category);
+    //         });
+    //     }
 
-        /**
-         * Sorting
-         */
-        $sortBy = $request->get('sort_by', 'published_at');
-        $sortDirection = $request->get('sort_direction', 'desc');
+    //     /**
+    //      * Featured Filter
+    //      */
+    //     if ($request->filled('featured')) {
+    //         $query->where(
+    //             'featured',
+    //             filter_var($request->featured, FILTER_VALIDATE_BOOLEAN)
+    //         );
+    //     }
 
-        $query->orderBy($sortBy, $sortDirection);
+    //     /**
+    //      * Sorting
+    //      */
+    //     $sortBy = $request->get('sort_by', 'published_at');
+    //     $sortDirection = $request->get('sort_direction', 'desc');
 
-        /**
-         * Pagination
-         */
-        $perPage = $request->integer('per_page', 10);
+    //     $query->orderBy($sortBy, $sortDirection);
 
-        return new ProjectCollection(
-            $query->paginate($perPage)
-                ->withQueryString()
-        );
-    }
+    //     /**
+    //      * Pagination
+    //      */
+    //     $perPage = $request->integer('per_page', 10);
+
+    //     return new ProjectCollection(
+    //         $query->paginate($perPage)
+    //             ->withQueryString()
+    //     );
+    // }
 
     /**
      * Display the specified project.
