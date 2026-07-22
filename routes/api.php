@@ -30,7 +30,7 @@ Route::prefix('v1')->group(function () {
     | Projects
     |--------------------------------------------------------------------------
     */
-
+    Route::get('/project-categories', [ProjectController::class, 'categories']);
     Route::get('/projects', [ProjectController::class, 'index']);
     Route::get('/projects/{slug}', [ProjectController::class, 'show']);
 

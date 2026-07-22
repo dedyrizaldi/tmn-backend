@@ -5,7 +5,9 @@ namespace App\Http\Controllers\Api\V1;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\Project\ProjectCollection;
 use App\Http\Resources\Project\ProjectResource;
+use App\Http\Resources\ProjectCategory\ProjectCategoryCollection;
 use App\Models\Project;
+use App\Models\ProjectCategory;
 use Illuminate\Http\Request;
 
 class ProjectController extends Controller
@@ -15,17 +17,16 @@ class ProjectController extends Controller
      */
     public function index(Request $request)
     {
-        
-          $query = Project::query()
-        ->with([
-            'category',
-            'media',
-        ])
-        ->where('status', 'published')
-        ->where(function ($query) {
-            $query->whereNull('published_at')
-                ->orWhere('published_at', '<=', now());
-        });
+        $query = Project::query()
+            ->with([
+                'category',
+                'media',
+            ])
+            ->where('status', 'published')
+            ->where(function ($query) {
+                $query->whereNull('published_at')
+                    ->orWhere('published_at', '<=', now());
+            });
 
         /**
          * Search
@@ -79,6 +80,18 @@ class ProjectController extends Controller
             $query->paginate($perPage)
                 ->withQueryString()
         );
+    }
+
+    /**
+     * Display project categories.
+     */
+    public function categories()
+    {
+        $categories = ProjectCategory::query()
+            ->orderBy('name')
+            ->get();
+
+        return new ProjectCategoryCollection($categories);
     }
 
     /**
