@@ -76,12 +76,7 @@ class NewsController extends Controller
          * Pagination
          */
         $perPage = $request->integer('per_page', 10);
-dd([
-    'sql' => $query->toSql(),
-    'bindings' => $query->getBindings(),
-    'count' => $query->count(),
-    'titles' => $query->pluck('title'),
-]);
+
         return new NewsCollection(
             $query->paginate($perPage)
                 ->withQueryString()
