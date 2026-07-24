@@ -117,7 +117,7 @@ class NewsForm
                             ->numeric()
                             ->default(0),
 
-                        DateTimePicker::make('published_at'),
+                        // DateTimePicker::make('published_at'),
 
                     ])
                     ->columns(4),
