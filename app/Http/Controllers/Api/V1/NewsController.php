@@ -28,6 +28,7 @@ class NewsController extends Controller
                 $query->whereNull('published_at')
                     ->orWhere('published_at', '<=', now());
             });
+            
 
         /**
          * Search
@@ -75,7 +76,12 @@ class NewsController extends Controller
          * Pagination
          */
         $perPage = $request->integer('per_page', 10);
-
+dd([
+    'sql' => $query->toSql(),
+    'bindings' => $query->getBindings(),
+    'count' => $query->count(),
+    'titles' => $query->pluck('title'),
+]);
         return new NewsCollection(
             $query->paginate($perPage)
                 ->withQueryString()
