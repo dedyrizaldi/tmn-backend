@@ -2,7 +2,7 @@
 
 namespace App\Filament\Resources\News\Schemas;
 
-use Filament\Forms\Components\DatePicker;
+use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
@@ -117,7 +117,7 @@ class NewsForm
                             ->numeric()
                             ->default(0),
 
-                        DatePicker::make('published_at'),
+                        DateTimePicker::make('published_at'),
 
                     ])
                     ->columns(4),
