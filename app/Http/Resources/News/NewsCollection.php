@@ -14,27 +14,8 @@ class NewsCollection extends ResourceCollection
     {
         return [
             'success' => true,
-
             'message' => 'News retrieved successfully.',
-
             'data' => NewsResource::collection($this->collection),
-        ];
-    }
-
-    /**
-     * Add pagination metadata.
-     */
-    public function with(Request $request): array
-    {
-        return [
-            'meta' => [
-                'current_page' => $this->currentPage(),
-                'last_page' => $this->lastPage(),
-                'per_page' => $this->perPage(),
-                'total' => $this->total(),
-                'from' => $this->firstItem(),
-                'to' => $this->lastItem(),
-            ],
         ];
     }
 }

@@ -22,6 +22,7 @@ Route::prefix('v1')->group(function () {
     |--------------------------------------------------------------------------
     */
 
+    Route::get('/news-categories', [NewsController::class, 'categories']);
     Route::get('/news', [NewsController::class, 'index']);
     Route::get('/news/{slug}', [NewsController::class, 'show']);
 

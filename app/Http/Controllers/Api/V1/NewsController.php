@@ -5,7 +5,10 @@ namespace App\Http\Controllers\Api\V1;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\News\NewsCollection;
 use App\Http\Resources\News\NewsResource;
+use App\Http\Resources\News\NewsCategoryResource;
+use App\Http\Resources\News\NewsCategoryCollection;
 use App\Models\News;
+use App\Models\NewsCategory;
 use Illuminate\Http\Request;
 
 class NewsController extends Controller
@@ -71,7 +74,7 @@ class NewsController extends Controller
         /**
          * Pagination
          */
-        $perPage = $request->integer('per_page', 9);
+        $perPage = $request->integer('per_page', 10);
 
         return new NewsCollection(
             $query->paginate($perPage)
@@ -98,5 +101,15 @@ class NewsController extends Controller
             ->firstOrFail();
 
         return new NewsResource($news);
+    }
+
+
+    public function categories()
+    {
+        $categories = NewsCategory::query()
+            ->orderBy('name')
+            ->get();
+        
+        return new NewsCategoryCollection($categories);
     }
 }
