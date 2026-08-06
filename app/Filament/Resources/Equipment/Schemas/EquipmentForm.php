@@ -185,7 +185,6 @@ class EquipmentForm
                                     ->default('draft')
                                     ->required(),
 
-                                DateTimePicker::make('published_at'),
 
                             ]),
 
