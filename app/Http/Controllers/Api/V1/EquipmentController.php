@@ -63,10 +63,12 @@ class EquipmentController extends Controller
         /**
          * Sorting
          */
-        $sortBy = $request->get('sort_by', 'published_at');
+         $sortBy = $request->get('sort_by', 'published_at');
         $sortDirection = $request->get('sort_direction', 'desc');
 
-        $query->orderBy($sortBy, $sortDirection);
+        $query
+            ->orderBy($sortBy, $sortDirection)
+            ->orderByDesc('id');
 
         /**
          * Pagination
