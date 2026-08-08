@@ -17,290 +17,553 @@ class ProjectSeeder extends Seeder
     {
         $projects = [
 
-            // ===========================
-            // Tank Cleaning
-            // ===========================
+            // =====================================================
+            // 2025
+            // =====================================================
 
             [
-                'title' => 'Tank Cleaning at Balikpapan Oil Terminal',
-                'category' => 'Tank Cleaning',
-                'client' => 'PT Pertamina Patra Niaga',
-                'location' => 'Balikpapan',
-                'date' => '2026-01-15',
-            ],
-            [
-                'title' => 'Crude Oil Storage Tank Cleaning',
-                'category' => 'Tank Cleaning',
-                'client' => 'PT Kilang Pertamina Internasional',
-                'location' => 'Cilacap',
-                'date' => '2026-02-11',
-            ],
-            [
-                'title' => 'Chemical Storage Tank Cleaning',
-                'category' => 'Tank Cleaning',
-                'client' => 'PT Lotte Chemical Indonesia',
-                'location' => 'Cilegon',
-                'date' => '2026-03-08',
-            ],
-            [
-                'title' => 'Tank Sludge Removal Project',
-                'category' => 'Tank Cleaning',
-                'client' => 'Chevron Indonesia',
-                'location' => 'Duri',
-                'date' => '2026-04-03',
-            ],
-            [
-                'title' => 'Tank Farm Cleaning Services',
-                'category' => 'Tank Cleaning',
-                'client' => 'PT Vopak Terminal Indonesia',
-                'location' => 'Merak',
-                'date' => '2026-05-17',
-            ],
-            [
-                'title' => 'Tank Degassing Operation',
-                'category' => 'Tank Cleaning',
-                'client' => 'PT Trans Pacific Petrochemical',
-                'location' => 'Tuban',
-                'date' => '2026-06-10',
+                'client' => 'PT Inti Kreasindo Utama',
+                'title' => 'HMCS OTTAWA',
+                'excerpt' => 'Tank Cleaning',
+                'year' => 2025,
             ],
 
-            // ===========================
-            // Cargo Hold Cleaning
-            // ===========================
-
             [
-                'title' => 'Cargo Hold Cleaning MV Ocean Pioneer',
-                'category' => 'Cargo Hold Cleaning',
-                'client' => 'PT Samudera Indonesia',
-                'location' => 'Surabaya',
-                'date' => '2026-02-28',
-            ],
-            [
-                'title' => 'Bulk Carrier Cargo Hold Washing',
-                'category' => 'Cargo Hold Cleaning',
-                'client' => 'PT Tanto Intim Line',
-                'location' => 'Banjarmasin',
-                'date' => '2026-04-18',
-            ],
-            [
-                'title' => 'Cargo Hold Cleaning MV Meratus',
-                'category' => 'Cargo Hold Cleaning',
-                'client' => 'PT Meratus Line',
-                'location' => 'Jakarta',
-                'date' => '2026-06-14',
-            ],
-            [
-                'title' => 'Cargo Hold Preparation Before Loading',
-                'category' => 'Cargo Hold Cleaning',
-                'client' => 'PT Salam Pacific Indonesia Lines',
-                'location' => 'Makassar',
-                'date' => '2026-07-02',
+                'client' => 'Image Card',
+                'title' => 'MT. GAMKONORA',
+                'excerpt' => 'Tank Cleaning and Sludge Removal',
+                'year' => 2025,
             ],
 
-            // ===========================
-            // Industrial Cleaning
-            // ===========================
+            // =====================================================
+            // 2024
+            // =====================================================
 
             [
-                'title' => 'Industrial Tank Maintenance',
-                'category' => 'Industrial Cleaning',
-                'client' => 'PT Chandra Asri Petrochemical',
-                'location' => 'Cilegon',
-                'date' => '2026-03-20',
-            ],
-            [
-                'title' => 'Industrial Vacuum Cleaning',
-                'category' => 'Industrial Cleaning',
-                'client' => 'PT Krakatau Steel',
-                'location' => 'Cilegon',
-                'date' => '2026-05-05',
-            ],
-            [
-                'title' => 'Waste Oil Tank Cleaning',
-                'category' => 'Industrial Cleaning',
-                'client' => 'PT Pupuk Indonesia',
-                'location' => 'Gresik',
-                'date' => '2026-08-10',
-            ],
-            [
-                'title' => 'Industrial Plant Cleaning',
-                'category' => 'Industrial Cleaning',
-                'client' => 'PT Indocement Tunggal Prakarsa',
-                'location' => 'Bogor',
-                'date' => '2026-10-03',
+                'client' => 'Waruna',
+                'title' => 'MT. Medelin Expo',
+                'excerpt' => 'Tank Cleaning, Rafting, Mopping',
+                'year' => 2024,
             ],
 
-            // ===========================
-            // Marine Cleaning
-            // ===========================
-
             [
-                'title' => 'Marine Engine Room Cleaning',
-                'category' => 'Marine Cleaning',
-                'client' => 'PT Dharma Lautan Utama',
-                'location' => 'Surabaya',
-                'date' => '2026-01-29',
-            ],
-            [
-                'title' => 'Marine Deck High Pressure Cleaning',
-                'category' => 'Marine Cleaning',
-                'client' => 'PT Pelni',
-                'location' => 'Ambon',
-                'date' => '2026-04-09',
-            ],
-            [
-                'title' => 'Ballast Tank Cleaning',
-                'category' => 'Marine Cleaning',
-                'client' => 'PT Buana Lintas Lautan',
-                'location' => 'Batam',
-                'date' => '2026-08-22',
-            ],
-            [
-                'title' => 'Vessel Accommodation Cleaning',
-                'category' => 'Marine Cleaning',
-                'client' => 'PT Wintermar Offshore Marine',
-                'location' => 'Batam',
-                'date' => '2026-11-01',
+                'client' => 'PT Pertamina Trans Kontinental',
+                'title' => 'MT. Gas Patra',
+                'excerpt' => 'Free Gas Cargo',
+                'year' => 2024,
             ],
 
-            // ===========================
-            // Offshore Support
-            // ===========================
-
             [
-                'title' => 'Offshore Equipment Mobilization',
-                'category' => 'Offshore Support',
-                'client' => 'PT Elnusa Tbk',
-                'location' => 'Natuna',
-                'date' => '2026-03-25',
-            ],
-            [
-                'title' => 'Offshore Pipeline Cleaning',
-                'category' => 'Offshore Support',
-                'client' => 'PT Rekayasa Industri',
-                'location' => 'Balikpapan',
-                'date' => '2026-09-15',
-            ],
-            [
-                'title' => 'Offshore Platform Cleaning',
-                'category' => 'Offshore Support',
-                'client' => 'Medco Energy',
-                'location' => 'Sorong',
-                'date' => '2026-12-08',
+                'client' => 'Arkad',
+                'title' => 'Arkad',
+                'excerpt' => 'Silo Tank',
+                'year' => 2024,
             ],
 
-            // ===========================
-            // Port Services
-            // ===========================
-
             [
-                'title' => 'Jetty Cleaning Project',
-                'category' => 'Port Services',
-                'client' => 'Pelindo',
-                'location' => 'Makassar',
-                'date' => '2026-03-18',
-            ],
-            [
-                'title' => 'Port Warehouse Cleaning',
-                'category' => 'Port Services',
-                'client' => 'Pelindo',
-                'location' => 'Belawan',
-                'date' => '2026-07-15',
-            ],
-            [
-                'title' => 'Port Facility Cleaning Services',
-                'category' => 'Port Services',
-                'client' => 'Pelindo',
-                'location' => 'Tanjung Priok',
-                'date' => '2026-11-18',
+                'client' => 'PIS',
+                'title' => 'MT Kurau',
+                'excerpt' => 'Desloping Oily Water',
+                'year' => 2024,
             ],
 
-            // ===========================
-            // Equipment Rental
-            // ===========================
-
             [
-                'title' => 'Marine Equipment Rental',
-                'category' => 'Equipment Rental',
-                'client' => 'PT Meratus Line',
-                'location' => 'Jakarta',
-                'date' => '2026-04-11',
-            ],
-            [
-                'title' => 'Equipment Rental for Jetty Project',
-                'category' => 'Equipment Rental',
-                'client' => 'PT Wijaya Karya',
-                'location' => 'Makassar',
-                'date' => '2026-09-14',
-            ],
-            [
-                'title' => 'Vacuum Truck Rental Services',
-                'category' => 'Equipment Rental',
-                'client' => 'PT Pupuk Indonesia',
-                'location' => 'Gresik',
-                'date' => '2026-10-26',
+                'client' => 'Synergy Marine',
+                'title' => 'MT Gamalama',
+                'excerpt' => 'Tank Cleaning & Sludge Removal',
+                'year' => 2024,
             ],
 
-            // ===========================
-            // Waste Management
-            // ===========================
-
             [
-                'title' => 'Industrial Waste Handling',
-                'category' => 'Waste Management',
-                'client' => 'PT Krakatau Steel',
-                'location' => 'Cilegon',
-                'date' => '2026-05-28',
-            ],
-            [
-                'title' => 'Oil Sludge Transportation',
-                'category' => 'Waste Management',
-                'client' => 'PT Pertamina EP',
-                'location' => 'Balongan',
-                'date' => '2026-10-12',
+                'client' => 'PIS',
+                'title' => 'MT Cendrawasih',
+                'excerpt' => 'Pumping Minyak Cargo',
+                'year' => 2024,
             ],
 
-            // ===========================
-            // Oil & Gas
-            // ===========================
+            // =====================================================
+            // 2023
+            // =====================================================
 
             [
-                'title' => 'Oil Terminal Cleaning Services',
-                'category' => 'Oil & Gas',
-                'client' => 'PT Pertamina Patra Niaga',
-                'location' => 'Balikpapan',
-                'date' => '2026-06-22',
+                'client' => 'PT Pertamina Trans Kontinental',
+                'title' => 'MT. Kuang',
+                'excerpt' => 'Tank Cleaning, Rafting & Mopping and Waste Disposal',
+                'year' => 2023,
+            ],
+
+            [
+                'client' => '1630901561099',
+                'title' => 'MT. Champion Express',
+                'excerpt' => 'Pumping & Cleaning',
+                'year' => 2023,
+            ],
+
+            [
+                'client' => 'Synergy Marine',
+                'title' => 'MT. Gamalama',
+                'excerpt' => 'Tank Cleaning & Sludge Removal',
+                'year' => 2023,
+            ],
+
+            // =====================================================
+            // 2022
+            // =====================================================
+
+            [
+                'client' => 'PIS',
+                'title' => 'MT. Gebang',
+                'excerpt' => 'Tank Cleaning, Rafting, Sludge Removal & Waste Handling',
+                'year' => 2022,
+            ],
+
+            [
+                'client' => 'BUILD WATER TANK',
+                'title' => 'BUILD WATER TANK',
+                'excerpt' => 'Tank Cleaning and Waste Disposal',
+                'year' => 2022,
+            ],
+
+            [
+                'client' => '32403 Banner',
+                'title' => 'MT. Petro Garuda',
+                'excerpt' => 'Tank Cleaning & Sludge Removal',
+                'year' => 2022,
+            ],
+
+            // =====================================================
+            // 2021
+            // =====================================================
+
+            [
+                'client' => 'Waruna',
+                'title' => 'MT. Medeline Master',
+                'excerpt' => 'Tank Cleaning, Rafting & Sludge Disposal',
+                'year' => 2021,
+            ],
+
+            [
+                'client' => 'PIS',
+                'title' => 'MT. Gamalama',
+                'excerpt' => 'Tank Cleaning, Sludge Removal, and Waste Handling',
+                'year' => 2021,
+            ],
+
+            [
+                'client' => 'PIS',
+                'title' => 'MT. Sanana',
+                'excerpt' => 'Tank Cleaning, Sludge Removal & Waste Handling',
+                'year' => 2021,
+            ],
+
+            [
+                'client' => 'Pertamina',
+                'title' => 'MT. Gebang',
+                'excerpt' => 'Tank Cleaning & Sludge Removal',
+                'year' => 2021,
+            ],
+
+            [
+                'client' => 'bul1',
+                'title' => 'MT. Oceania',
+                'excerpt' => 'Tank Cleaning',
+                'year' => 2021,
+            ],
+
+            [
+                'client' => '1688626522320',
+                'title' => 'MT. Bull Kalimantan',
+                'excerpt' => 'Tank Cleaning',
+                'year' => 2021,
+            ],
+
+            // =====================================================
+            // 2020
+            // =====================================================
+
+            [
+                'client' => 'images',
+                'title' => 'MT. Astipal',
+                'excerpt' => 'Tank Cleaning, Rafting & Sludge Disposal',
+                'year' => 2020,
+            ],
+
+            [
+                'client' => 'Pertamina',
+                'title' => 'MT. Gamkonora',
+                'excerpt' => 'Tank Cleaning & Disposal',
+                'year' => 2020,
+            ],
+
+            [
+                'client' => 'CM1',
+                'title' => 'MT. Bratasena',
+                'excerpt' => 'Tank Cleaning, Scraping, Mopping, & Pumping',
+                'year' => 2020,
+            ],
+
+            [
+                'client' => 'Pertamina',
+                'title' => 'MT. Enduro',
+                'excerpt' => 'Tank Cleaning, Sludge Removal & Sludge Disposal',
+                'year' => 2020,
+            ],
+
+            // =====================================================
+            // 2019
+            // =====================================================
+
+            [
+                'client' => 'Pertamina',
+                'title' => 'MT. Kuang',
+                'excerpt' => 'Tank Cleaning, Sludge Removal and Waste Handling',
+                'year' => 2019,
+            ],
+
+            [
+                'client' => 'Pertamina',
+                'title' => 'MT. Cendrawasih',
+                'excerpt' => 'Tank Cleaning, Sludge Removal and Waste Handling',
+                'year' => 2019,
+            ],
+
+            [
+                'client' => 'Waruna',
+                'title' => 'MT. Madeline Expo',
+                'excerpt' => 'Tank Cleaning, Sludge Removal and Waste Handling',
+                'year' => 2019,
+            ],
+
+            [
+                'client' => 'SH1',
+                'title' => 'MT. Shinta',
+                'excerpt' => 'Pumping - Oil Transfer',
+                'year' => 2019,
+            ],
+
+            [
+                'client' => 'Waruna',
+                'title' => 'MT. Martha Option',
+                'excerpt' => 'Tank Cleaning & Sludge Removal',
+                'year' => 2019,
+            ],
+
+            [
+                'client' => 'CS1',
+                'title' => 'Water Tank',
+                'excerpt' => 'Tank Cleaning & Pumping',
+                'year' => 2019,
+            ],
+
+            [
+                'client' => 'RS1',
+                'title' => 'Water Tank',
+                'excerpt' => 'Tank Cleaning Services & Pumping',
+                'year' => 2019,
+            ],
+
+            // =====================================================
+            // 2018
+            // =====================================================
+
+            [
+                'client' => 'Pertamina',
+                'title' => 'MT. Galunggung',
+                'excerpt' => 'Tank Cleaning & Sludge Removal',
+                'year' => 2018,
+            ],
+
+            [
+                'client' => 'Pertamina',
+                'title' => 'MT. SERUI',
+                'excerpt' => 'Tank Cleaning & Sludge Removal',
+                'year' => 2018,
+            ],
+
+            [
+                'client' => 'Pertamina',
+                'title' => 'MT. SENIPAH',
+                'excerpt' => 'Tank Cleaning & Sludge Removal',
+                'year' => 2018,
+            ],
+
+            [
+                'client' => 'Pertamina',
+                'title' => 'MT. Sanana',
+                'excerpt' => 'Tank Cleaning & Sludge Removal',
+                'year' => 2018,
+            ],
+
+            [
+                'client' => 'Pertamina',
+                'title' => 'MT. Ketaling',
+                'excerpt' => 'Tank Cleaning & Sludge Disposal',
+                'year' => 2018,
+            ],
+
+            [
+                'client' => 'Pertamina',
+                'title' => 'MT. Pegaden',
+                'excerpt' => 'Tank Cleaning and Sludge Disposal',
+                'year' => 2018,
+            ],
+
+            [
+                'client' => 'Pertamina',
+                'title' => 'MT. Sanggau',
+                'excerpt' => 'Tank Cleaning & Sludge Disposal',
+                'year' => 2018,
+            ],
+
+            [
+                'client' => 'Pertamina',
+                'title' => 'MT. Kakap',
+                'excerpt' => 'Oily Water Disposal / Mopping / Rafting',
+                'year' => 2018,
+            ],
+
+            // =====================================================
+            // 2017
+            // =====================================================
+
+            [
+                'client' => 'SMI',
+                'title' => 'Jag Leela',
+                'excerpt' => 'Tank Cleaning',
+                'year' => 2017,
+            ],
+
+            [
+                'client' => 'Pertamina',
+                'title' => 'FSO Abherka',
+                'excerpt' => 'Pumping',
+                'year' => 2017,
+            ],
+
+            [
+                'client' => 'Pertamina',
+                'title' => 'FSO Abherka',
+                'excerpt' => 'Tank Cleaning, Pouring, Sludge Removal, De-slopping',
+                'year' => 2017,
+            ],
+
+            [
+                'client' => 'Pertamina',
+                'title' => 'MT. Gunung Kemala',
+                'excerpt' => 'Tank Cleaning, Sludge Removal, Oil De-slopping',
+                'year' => 2017,
+            ],
+
+            [
+                'client' => 'Pertamina',
+                'title' => 'MT. Sambu',
+                'excerpt' => 'Tank Cleaning, Pumping, De-slopping',
+                'year' => 2017,
+            ],
+
+            // =====================================================
+            // 2016
+            // =====================================================
+
+            [
+                'client' => 'Pertamina',
+                'title' => 'MT. Sungai Gerong',
+                'excerpt' => 'Tank Cleaning, Sludge Removal, Oil De-slopping',
+                'year' => 2016,
+            ],
+
+            [
+                'client' => 'Pertamina',
+                'title' => 'MT. Sei Pakning',
+                'excerpt' => 'Tank Cleaning, Pumping, De-slopping',
+                'year' => 2016,
+            ],
+
+            [
+                'client' => 'Pertamina',
+                'title' => 'MT. Pegaden',
+                'excerpt' => 'Tank Cleaning, Sludge Removal, Oil De-slopping',
+                'year' => 2016,
+            ],
+
+            [
+                'client' => 'Pertamina',
+                'title' => 'MT. Gede',
+                'excerpt' => 'Tank Cleaning, Sludge Removal, Oil De-slopping',
+                'year' => 2016,
+            ],
+
+            // =====================================================
+            // 2015
+            // =====================================================
+
+            [
+                'client' => 'Pertamina',
+                'title' => 'MT. Gunung Kemala',
+                'excerpt' => 'Tank Cleaning, Pumping, De-slopping',
+                'year' => 2015,
+            ],
+
+            [
+                'client' => 'Santosa',
+                'title' => 'FPSO Seagood - 101',
+                'excerpt' => 'NDT, Tank Cleaning, Sludge Removal',
+                'year' => 2015,
+            ],
+
+            [
+                'client' => 'Pertamina',
+                'title' => 'Job Pertamina - Talisman',
+                'excerpt' => 'Tank Cleaning, Sludge Oil Removal',
+                'year' => 2015,
+            ],
+
+            // =====================================================
+            // 2014
+            // =====================================================
+
+            [
+                'client' => 'Knutsen',
+                'title' => 'MT. Tove Knutsen',
+                'excerpt' => 'Tank De-slopping',
+                'year' => 2014,
+            ],
+
+            // =====================================================
+            // 2013
+            // =====================================================
+
+            [
+                'client' => 'VSIP',
+                'title' => 'MT. Multi Echo',
+                'excerpt' => 'Tank Cleaning, Sludge Oil Removal',
+                'year' => 2013,
+            ],
+
+            // =====================================================
+            // 2012
+            // =====================================================
+
+            [
+                'client' => 'Pertamina',
+                'title' => 'FSO. Cilacap',
+                'excerpt' => 'Tank Cleaning, Sludge Removal',
+                'year' => 2012,
+            ],
+
+            [
+                'client' => 'TRD',
+                'title' => 'MT. Concertina',
+                'excerpt' => 'Tank Cleaning, Sludge Removal',
+                'year' => 2012,
+            ],
+
+            [
+                'client' => 'Santosa',
+                'title' => 'FPSO Seagood - 101',
+                'excerpt' => 'Tank Cleaning, Sludge Collection, Sludge Removal',
+                'year' => 2012,
+            ],
+
+            [
+                'client' => 'TRD',
+                'title' => 'MT. Putri Bangsa',
+                'excerpt' => 'Tank Cleaning, Installation of Leader',
+                'year' => 2012,
             ],
         ];
 
+        /*
+         * =========================================================
+         * IMPORT
+         * =========================================================
+         */
+
         foreach ($projects as $index => $project) {
 
-            $category = ProjectCategory::where(
-                'name',
-                $project['category']
-            )->first();
+            /*
+             * Semua project lama kita masukkan ke satu kategori
+             * project yang aktif.
+             *
+             * Kalau nanti Anda ingin membagi berdasarkan kategori,
+             * bisa kita lakukan setelah data berhasil masuk.
+             */
+            $category = ProjectCategory::query()
+                ->where('status', true)
+                ->orderBy('sort_order')
+                ->first();
 
-            Project::updateOrCreate(
-                [
-                    'slug' => Str::slug($project['title']),
-                ],
-                [
-                    'project_category_id' => $category?->id,
-                    'title' => $project['title'],
-                    'slug' => Str::slug($project['title']),
-                    'client' => $project['client'],
-                    'location' => $project['location'],
-                    'project_date' => Carbon::parse($project['date']),
-                    'excerpt' => fake()->sentence(18),
-                    'description' => fake()->paragraphs(5, true),
-                    'featured' => $index < 6,
-                    'sort_order' => $index + 1,
-                    'status' => 'published',
-                    'published_at' => now(),
-                    'meta_title' => $project['title'],
-                    'meta_description' => fake()->sentence(),
-                ]
+            $projectDate = Carbon::create(
+                $project['year'],
+                1,
+                1
             );
+
+            $slug = Str::slug(
+                $project['title'] .
+                '-' .
+                $project['client'] .
+                '-' .
+                $project['year']
+            );
+
+            /*
+             * Hindari slug duplicate.
+             */
+            $originalSlug = $slug;
+            $counter = 1;
+
+            while (
+                Project::where('slug', $slug)->exists()
+            ) {
+                $slug = $originalSlug . '-' . $counter;
+                $counter++;
+            }
+
+            Project::create([
+                'project_category_id' => $category?->id,
+
+                'title' => $project['title'],
+
+                'slug' => $slug,
+
+                'client' => $project['client'],
+
+                'location' => null,
+
+                'project_date' => $projectDate,
+
+                /*
+                 * Lingkup kerja dari data project lama.
+                 */
+                'excerpt' => $project['excerpt'],
+
+                /*
+                 * Untuk sementara description menggunakan
+                 * lingkup kerja yang sama.
+                 */
+                'description' => $project['excerpt'],
+
+                'meta_title' =>
+                    $project['title'] .
+                    ' - ' .
+                    $project['client'],
+
+                'meta_description' =>
+                    $project['excerpt'],
+
+                'featured' => false,
+
+                'sort_order' => $index + 1,
+
+                'status' => 'published',
+
+                'published_at' => $projectDate,
+
+                'created_at' => now(),
+
+                'updated_at' => now(),
+            ]);
         }
     }
 }
