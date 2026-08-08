@@ -17,17 +17,18 @@ class ProjectSeeder extends Seeder
     {
         /*
         |--------------------------------------------------------------------------
-        | Project Category
+        | PROJECT CATEGORY
         |--------------------------------------------------------------------------
+        |
         | ID 1 = Tank Cleaning
-        |--------------------------------------------------------------------------
+        |
         */
 
         $category = ProjectCategory::findOrFail(1);
 
         /*
         |--------------------------------------------------------------------------
-        | Project Data
+        | PROJECT DATA
         |--------------------------------------------------------------------------
         */
 
@@ -491,7 +492,7 @@ class ProjectSeeder extends Seeder
 
         /*
         |--------------------------------------------------------------------------
-        | Insert Projects
+        | INSERT PROJECTS
         |--------------------------------------------------------------------------
         */
 
@@ -504,8 +505,11 @@ class ProjectSeeder extends Seeder
             );
 
             /*
-             * Generate slug.
-             */
+            |--------------------------------------------------------------------------
+            | Generate unique slug
+            |--------------------------------------------------------------------------
+            */
+
             $baseSlug = Str::slug(
                 $project['title'] .
                 '-' .
@@ -518,19 +522,19 @@ class ProjectSeeder extends Seeder
 
             $counter = 1;
 
-            /*
-             * Hindari duplicate slug.
-             */
-            while (Project::where('slug', $slug)->exists()) {
-
+            while (
+                Project::where('slug', $slug)->exists()
+            ) {
                 $slug = $baseSlug . '-' . $counter;
-
                 $counter++;
             }
 
             /*
-             * Insert.
-             */
+            |--------------------------------------------------------------------------
+            | Create Project
+            |--------------------------------------------------------------------------
+            */
+
             Project::create([
                 'project_category_id' => $category->id,
 
@@ -569,6 +573,12 @@ class ProjectSeeder extends Seeder
                 'updated_at' => now(),
             ]);
         }
+
+        /*
+        |--------------------------------------------------------------------------
+        | Seeder Result
+        |--------------------------------------------------------------------------
+        */
 
         $this->command->info(
             'Project import berhasil: ' .
