@@ -153,11 +153,15 @@ class ProjectForm
                             ->required(),
 
                         Select::make('featured')
-                            ->options([
-                                0 => 'No',
-                                1 => 'Yes',
-                            ])
-                            ->default(0),
+                        ->options([
+                            0 => 'No',
+                            1 => 'Yes',
+                        ])
+                        ->default(0)
+                        ->required()
+                        ->dehydrateStateUsing(
+                            fn ($state) => $state ?? 0
+                        ),
 
                         TextInput::make('sort_order')
                             ->numeric()
