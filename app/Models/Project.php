@@ -41,7 +41,10 @@ class Project extends Model implements HasMedia
      */
     public function category(): BelongsTo
     {
-        return $this->belongsTo(ProjectCategory::class, 'project_category_id');
+        return $this->belongsTo(
+            ProjectCategory::class,
+            'project_category_id'
+        );
     }
 
     /**
@@ -49,12 +52,34 @@ class Project extends Model implements HasMedia
      */
     public function registerMediaCollections(): void
     {
+        /*
+        |--------------------------------------------------------------------------
+        | Thumbnail
+        |--------------------------------------------------------------------------
+        */
         $this
             ->addMediaCollection('thumbnail')
             ->singleFile();
 
+        /*
+        |--------------------------------------------------------------------------
+        | Gallery
+        |--------------------------------------------------------------------------
+        */
         $this
             ->addMediaCollection('gallery');
+
+        /*
+        |--------------------------------------------------------------------------
+        | Experience Letter
+        |--------------------------------------------------------------------------
+        |
+        | Surat pengalaman hanya boleh memiliki satu file.
+        |
+        */
+        $this
+            ->addMediaCollection('experience_letter')
+            ->singleFile();
     }
 
     /**
@@ -65,8 +90,13 @@ class Project extends Model implements HasMedia
         return $query
             ->where('status', 'published')
             ->where(function ($query) {
-                $query->whereNull('published_at')
-                    ->orWhere('published_at', '<=', now());
+                $query
+                    ->whereNull('published_at')
+                    ->orWhere(
+                        'published_at',
+                        '<=',
+                        now()
+                    );
             });
     }
 

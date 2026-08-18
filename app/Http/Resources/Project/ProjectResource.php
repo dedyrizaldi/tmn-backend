@@ -32,8 +32,31 @@ class ProjectResource extends JsonResource
 
             'description' => $this->description,
 
+            /*
+            |--------------------------------------------------------------------------
+            | Thumbnail
+            |--------------------------------------------------------------------------
+            */
             'thumbnail' => $this->getFirstMediaUrl('thumbnail'),
 
+            /*
+            |--------------------------------------------------------------------------
+            | Experience Letter
+            |--------------------------------------------------------------------------
+            |
+            | Surat pengalaman disimpan sebagai satu file/gambar
+            | pada media collection "experience_letter".
+            |
+            */
+            'experience_letter' => $this->getFirstMediaUrl(
+                'experience_letter'
+            ) ?: null,
+
+            /*
+            |--------------------------------------------------------------------------
+            | Gallery
+            |--------------------------------------------------------------------------
+            */
             'gallery' => $this->getMedia('gallery')
                 ->map(fn ($media) => [
                     'id' => $media->id,
@@ -42,6 +65,11 @@ class ProjectResource extends JsonResource
                 ])
                 ->values(),
 
+            /*
+            |--------------------------------------------------------------------------
+            | Category
+            |--------------------------------------------------------------------------
+            */
             'category' => [
                 'id' => $this->category?->id,
                 'name' => $this->category?->name,

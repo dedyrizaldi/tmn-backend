@@ -13,8 +13,8 @@ use Filament\Schemas\Components\Section;
 use Filament\Schemas\Components\Utilities\Get;
 use Filament\Schemas\Components\Utilities\Set;
 use Filament\Schemas\Schema;
-use Illuminate\Support\Str;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
+use Illuminate\Support\Str;
 
 class ProjectForm
 {
@@ -30,13 +30,26 @@ class ProjectForm
                             ->required()
                             ->maxLength(255)
                             ->live(onBlur: true)
-                            ->afterStateUpdated(function (Get $get, Set $set, ?string $old, ?string $state): void {
-                                if (($get('slug') ?? '') !== Str::slug($old ?? '')) {
-                                    return;
-                                }
+                            ->afterStateUpdated(
+                                function (
+                                    Get $get,
+                                    Set $set,
+                                    ?string $old,
+                                    ?string $state
+                                ): void {
+                                    if (
+                                        ($get('slug') ?? '') !==
+                                        Str::slug($old ?? '')
+                                    ) {
+                                        return;
+                                    }
 
-                                $set('slug', Str::slug($state ?? ''));
-                            }),
+                                    $set(
+                                        'slug',
+                                        Str::slug($state ?? '')
+                                    );
+                                }
+                            ),
 
                         TextInput::make('slug')
                             ->required()
@@ -45,7 +58,10 @@ class ProjectForm
 
                         Select::make('project_category_id')
                             ->label('Category')
-                            ->relationship('category', 'name')
+                            ->relationship(
+                                'category',
+                                'name'
+                            )
                             ->searchable()
                             ->preload()
                             ->required(),
@@ -57,6 +73,7 @@ class ProjectForm
                             ->maxLength(255),
 
                         DatePicker::make('project_date'),
+
                     ])
                     ->columns(2),
 
@@ -75,15 +92,39 @@ class ProjectForm
                 Section::make('Media')
                     ->schema([
 
+                        /*
+                        |--------------------------------------------------------------------------
+                        | Thumbnail
+                        |--------------------------------------------------------------------------
+                        */
                         SpatieMediaLibraryFileUpload::make('thumbnail')
                             ->collection('thumbnail')
                             ->image()
                             ->required(),
 
+                        /*
+                        |--------------------------------------------------------------------------
+                        | Gallery
+                        |--------------------------------------------------------------------------
+                        */
                         SpatieMediaLibraryFileUpload::make('gallery')
                             ->collection('gallery')
                             ->multiple()
                             ->image(),
+
+                        /*
+                        |--------------------------------------------------------------------------
+                        | Experience Letter
+                        |--------------------------------------------------------------------------
+                        */
+                        SpatieMediaLibraryFileUpload::make(
+                            'experience_letter'
+                        )
+                            ->label('Surat Pengalaman')
+                            ->collection('experience_letter')
+                            ->image()
+                            ->imageEditor()
+                            ->maxSize(10240),
 
                     ])
                     ->columns(2),
