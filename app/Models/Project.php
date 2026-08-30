@@ -13,11 +13,12 @@ class Project extends Model implements HasMedia
     use HasFactory;
     use InteractsWithMedia;
 
-    protected $fillable = [
+   protected $fillable = [
         'project_category_id',
         'title',
         'slug',
         'client',
+        'scope_of_work',
         'location',
         'project_date',
         'meta_title',
