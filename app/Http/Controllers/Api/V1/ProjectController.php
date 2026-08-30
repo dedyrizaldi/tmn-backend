@@ -5,11 +5,27 @@ namespace App\Http\Controllers\Api\V1;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\Project\ProjectCollection;
 use App\Http\Resources\Project\ProjectResource;
+use App\Http\Resources\ProjectCategory\ProjectCategoryResource;
 use App\Models\Project;
+use App\Models\ProjectCategory;
 use Illuminate\Http\Request;
 
 class ProjectController extends Controller
 {
+    /**
+     * Display a listing of project categories.
+     */
+    public function categories()
+    {
+        $categories = ProjectCategory::query()
+            ->where('status', 'published')
+            ->orderBy('sort_order')
+            ->orderBy('name')
+            ->get();
+
+        return ProjectCategoryResource::collection($categories);
+    }
+
     /**
      * Display a listing of published projects.
      */
