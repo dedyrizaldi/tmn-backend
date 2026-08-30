@@ -20,8 +20,6 @@ class Project extends Model implements HasMedia
         'client',
         'location',
         'project_date',
-        'excerpt',
-        'description',
         'meta_title',
         'meta_description',
         'featured',
@@ -38,6 +36,8 @@ class Project extends Model implements HasMedia
 
     /**
      * Category Relationship
+     *
+     * Category digunakan sebagai Lingkup Kerja project.
      */
     public function category(): BelongsTo
     {
@@ -56,6 +56,9 @@ class Project extends Model implements HasMedia
         |--------------------------------------------------------------------------
         | Thumbnail
         |--------------------------------------------------------------------------
+        |
+        | Thumbnail utama project.
+        |
         */
         $this
             ->addMediaCollection('thumbnail')
@@ -63,8 +66,25 @@ class Project extends Model implements HasMedia
 
         /*
         |--------------------------------------------------------------------------
+        | Client Logo
+        |--------------------------------------------------------------------------
+        |
+        | Logo perusahaan/client.
+        | Hanya boleh memiliki satu file.
+        |
+        */
+        $this
+            ->addMediaCollection('client_logo')
+            ->singleFile();
+
+        /*
+        |--------------------------------------------------------------------------
         | Gallery
         |--------------------------------------------------------------------------
+        |
+        | Berisi seluruh foto pekerjaan/project.
+        | Dapat memiliki banyak file.
+        |
         */
         $this
             ->addMediaCollection('gallery');
@@ -74,7 +94,8 @@ class Project extends Model implements HasMedia
         | Experience Letter
         |--------------------------------------------------------------------------
         |
-        | Surat pengalaman hanya boleh memiliki satu file.
+        | Surat pengalaman kerja.
+        | Hanya boleh memiliki satu file.
         |
         */
         $this

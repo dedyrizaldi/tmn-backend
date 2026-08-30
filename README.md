@@ -1,62 +1,3 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
-
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
-
-## About Laravel
-
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
-
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
-
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
-
-## Learning Laravel
-
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
 
 ```
 tmn-backend
@@ -138,11 +79,16 @@ tmn-backend
 │  │     │  ├─ EquipmentCollection.php
 │  │     │  └─ EquipmentResource.php
 │  │     ├─ News
+│  │     │  ├─ NewsCategoryCollection.php
+│  │     │  ├─ NewsCategoryResource.php
 │  │     │  ├─ NewsCollection.php
 │  │     │  └─ NewsResource.php
-│  │     └─ Project
-│  │        ├─ ProjectCollection.php
-│  │        └─ ProjectResource.php
+│  │     ├─ Project
+│  │     │  ├─ ProjectCollection.php
+│  │     │  └─ ProjectResource.php
+│  │     └─ ProjectCategory
+│  │        ├─ ProjectCategoryCollection.php
+│  │        └─ ProjectCategoryResource.php
 │  ├─ Models
 │  │  ├─ Equipment.php
 │  │  ├─ EquipmentCategory.php
@@ -393,6 +339,7 @@ tmn-backend
 │  │     ├─ 8bea43e261e942172478801bcaa8f1e8.php
 │  │     ├─ 8fe29b84d77c9a93ad7df3cbbf1880fe.php
 │  │     ├─ 939c5e947080cd5bdef38001f6da3f87.php
+│  │     ├─ 941f001d9bb460e5afa7d2a0baaaf3e9.php
 │  │     ├─ 9b0533afb0416efb6fecc9e8486fecdb.php
 │  │     ├─ 9b48bed5333fbaeaa3cc4221ad52a302.php
 │  │     ├─ 9dfd8d0e373b53b0d2b52e0c94448d30.php
@@ -413,6 +360,7 @@ tmn-backend
 │  │     ├─ d2096b1044c4f0c0de951ead2669119b.php
 │  │     ├─ d2dbd28092bb9073433d4e90e46b717d.php
 │  │     ├─ d971af0dae9acb2c22838b795eecc9b7.php
+│  │     ├─ ddc08a3b2ad4ec317f360e7b41496917.php
 │  │     ├─ e17c9fdc78083748ade6c91cb96ef2ac.php
 │  │     ├─ e4aa4a67969a283fe175fd9030f8a159.php
 │  │     ├─ e66225e46145a6805b8f52f24d527783.php
